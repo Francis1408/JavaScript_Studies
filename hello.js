@@ -86,6 +86,13 @@ let primes = [2,3,5,7];
 
  console.log(y+hex);
 
+ let num1 = 5;
+ let num2 = .064;
+
+ num1 = num1 + num2;
+ 
+ console.log(num1);
+
 
  
 
