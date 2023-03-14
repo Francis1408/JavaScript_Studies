@@ -40,7 +40,7 @@ escreva(0.5, "Teste1: ", obtemNomeDoMes(-1));
 escreva(0.5, "Teste2: ", obtemNomeDoMes(0));
 escreva(0.5, "Teste3: ", obtemNomeDoMes(13));
 
-// =============  Exercício3 ====================
+// =============  Exercício 3 ====================
 
 function calculaVelocidadeAlturaBola(velocidadeInicial, gravidade, tempo) {
 
@@ -55,15 +55,93 @@ function calculaVelocidadeAlturaBola(velocidadeInicial, gravidade, tempo) {
 
 calculaVelocidadeAlturaBola(50, 9.81, 20);
 
-// ============= Exercício4 =====================
+// ============= Exercício 4 =====================
+
+function somatorio(number) {
+
+    let result = 0
+
+    for(let i = 2; i <= number; i+=2){
+        result+= 1/i;
+    }
+
+    return result;
+    
+}
+
+escreva(4, "Somatorio 1: ", somatorio(1));
+escreva(4, "Somatorio 2: ", somatorio(10));
+escreva(4, "Somatorio 3: ", somatorio(100));
+
+// ============== Exercicio 5 ======================
+
+function obtemPosicaoDoElemento(vetor, elemento) {
+
+    posicao = 0;
+
+    for(let ocorrencia of vetor){
+        if(ocorrencia === elemento){
+            return posicao;
+        }
+        posicao++;
+    }
+
+    return null;
+}
+
+frutas = ['Pera', 'Uva', 'Abacaxi', 'Cenoura'];
+
+escreva(5, "Consulta 1: ", obtemPosicaoDoElemento(frutas, 'Uva'));
+escreva(5, "Consulta 2: ", obtemPosicaoDoElemento(frutas, 'Cenoura'));
+escreva(5, "Consulta 3: ", obtemPosicaoDoElemento(frutas, 'Banana'));
 
 
+// ============== Exercício 6 ====================
+
+function calculaMediaEntreExtremos(vetor) {
+
+    maior = vetor[0];
+    menor = vetor[0];
+
+    for(let number of vetor){
+        if(number >= maior){
+            maior = number;
+        }
+        else if(number <= menor){
+            menor = number;
+        }
+    }
+
+    vetor.sort();
+    return (maior+menor)/2;
+
+}
+
+caixa = [3, 4, 12];
+
+escreva(6, "Resultado 1: ", calculaMediaEntreExtremos(caixa))  
+
+// ================== Exercício 7 ===================
 
 function fibonacci(tamanhoSequencia) {
     let sequencia = [];
-    
+
+    for(let i = 0; i < tamanhoSequencia; i++){
+
+        if(i === 0){
+            sequencia.push(0);
+
+        }else if (i === 1){
+            sequencia.push(1);
+            
+        }else{
+            sequencia.push(sequencia[i-1] + sequencia[i-2]);
+        }
+    }
+
     
     escreva(7, 'Fib(' + tamanhoSequencia + ')', sequencia);
     return sequencia;
 }
 
+resultado = fibonacci(7);
