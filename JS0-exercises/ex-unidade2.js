@@ -145,3 +145,42 @@ function fibonacci(tamanhoSequencia) {
 }
 
 resultado = fibonacci(7);
+
+// ================== Exercício 8 ===================
+
+function exibeAmigos(pessoas, amizades, nome) {
+    let amigos = [];
+
+    for(let i = 0; i < pessoas.length; i++){
+        if(amizades[pessoas.indexOf(nome)][i] === 1 ) {
+            amigos.push(pessoas[i]);
+        }
+    }
+
+    escreva(8, 'Amigos de ' + nome + ': ', amigos );
+    return amigos;
+
+}
+
+function exibeAmigosEmComum(pessoas, amizades, X, Y) {
+    let amigos_comum = [];
+    let amigos_de_X = exibeAmigos(pessoas, amizades, X);
+    let amigos_de_Y = exibeAmigos(pessoas, amizades, Y);
+
+    for(let amigo of amigos_de_X){
+        if(amigos_de_Y.includes(amigo)){
+            amigos_comum.push(amigo);
+        }
+    }
+    console.log(amigos_comum);
+    escreva(8, 'Amigos de ' + X + ' e ' + Y + ' em comum', amigos_comum );
+    return amigos_comum;
+
+}
+
+let pessoas = ['Alice', 'Bob', 'Carol', 'Daniele'];
+
+const amizades = [[0,0,0,1], [1,0,1,1], [0,0,0,1], [1,1,0,0]];
+
+exibeAmigosEmComum(pessoas, amizades,'Alice', 'Bob');
+

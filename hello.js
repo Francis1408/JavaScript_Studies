@@ -90,6 +90,9 @@ let primes = [2,3,5,7];
  let num2 = .064;
 
  num1 = num1 + num2;
+
+vetor = [4,1,2,5,3,9,8];
+vetor.sort()
  
  console.log(num1);
 
