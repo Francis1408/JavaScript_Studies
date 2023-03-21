@@ -1,6 +1,56 @@
+function metodosVetor(vetor) {
+
+    vetor.sort();
+    vetor.pop();
+    vetor.unshift("abacate");
+
+    return vetor;
+
+}
+
+let vet1 = [4, 0, 9];
+let str1 = ["abacaxi", "uva", "melancia"];
+
+escreva(0.6, "Resultado: ", metodosVetor(vet1));
+escreva(0.6, "Resultado: ", metodosVetor(str1));
+
+
+
+function metodosString(string) {
+
+    string = string.replaceAll('o', 'a');
+    string = string.toUpperCase();
+
+    return string;
+
+}
+
+let str2 = "O pato ama a pata";
+escreva(0.7, "Resultado: ", metodosString(str2));
+
+// ====================== Exercicio 9 ======================
+
+function escreveDataPorExtenso(data) {
+
+    data = data.split('/');
+    let mes = obtemNomeDoMes(data[1]);
+    let data_extenso = data[0] + " de " +  mes + " de " + data[2];
+    console.log(data_extenso);
+
+    return data_extenso;
+
+}
+
+let aniversario = "14/08/2000";
+escreva(9, "Data: ", escreveDataPorExtenso(aniversario));
+
+
+// =================== Exercicio 10 ==========================
+
+
 function eliminaCaracteres(texto, caracteresParaEliminar) {
     for (let caractere of caracteresParaEliminar) {
-
+        texto = texto.replaceAll(caractere, '');
     }
     
     
@@ -12,6 +62,7 @@ function substituiCaracteres(texto, caracteresProcura, caracteresSubstituirPor) 
     for(let i = 0; i < caracteresProcura.length; i++) {
         let caractereProcura = caracteresProcura[i];
         let caractereSubstituirPor = caracteresSubstituirPor[i];
+        texto = texto.replaceAll(caractereProcura, caractereSubstituirPor);
         
     }
     
@@ -22,9 +73,46 @@ function substituiCaracteres(texto, caracteresProcura, caracteresSubstituirPor) 
 function inverteTexto(texto) {
     let textoInvertido = '';
 
+    let textoSeparado = texto.split('');
+    let arrayInvertido = textoSeparado.reverse(); 
+
+    textoInvertido = arrayInvertido.join('');
+
 
     return textoInvertido;
 }
+
+let musica = "o sapo nao lava o pe";
+escreva(10, "Caracter Eliminado: ", eliminaCaracteres(musica, 'sal'));
+escreva(10, "Caracter Substituido: ", substituiCaracteres(musica, 'aoe', 'iiu'));
+escreva(10, "Texto invertido: ", inverteTexto(musica));
+
+
+
+// ========================== Exercicio 11 ========================
+
+
+function verificaPalindromo(texto) {
+    
+    if(texto.length === 1) return true;
+    
+    else { 
+        texto = texto.toLowerCase();
+        texto = substituiCaracteres(texto, ',-!?;', '     ');
+        texto = substituiCaracteres(texto, 'áéíóúâêîôûãẽĩõũç', 'aeiouaeiouaeiouc');
+        texto = eliminaCaracteres(texto, ' ');
+
+        if(texto === inverteTexto(texto)) return true;
+
+        else return false;
+        
+    }
+    
+}
+
+let str3 = "Socorram-me, subi no ônibus em Marrócós";
+escreva(11, "Palindromo: ", verificaPalindromo(str3));
+
 
 
 
@@ -39,7 +127,6 @@ function dizOiPara(funcaoDeDarOi, nomeDaPessoa) {
     escrevaMensagem(12, '======================================');
     escrevaMensagem(12, '<br>');
 }
-
 
 function oiEmPortuguesFormal(nome) {
     return 'Oi Sr(a). ' + nome + ', como vai?';
