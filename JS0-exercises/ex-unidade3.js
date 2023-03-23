@@ -89,7 +89,7 @@ escreva(10, "Texto invertido: ", inverteTexto(musica));
 
 
 
-// ========================== Exercicio 11 ========================
+// ======================== Exercicio 11 ========================
 
 
 function verificaPalindromo(texto) {
@@ -136,6 +136,14 @@ let oiEmPortugues = function(nome) {
     return 'Oi ' + nome + ', blza?';
 };
 
+function oiEmMandarin(nome) {
+    return 'Ni hao ' + nome + 'Ni zemeyang?';
+}
+
+let oiEmEspanhol = function(nome) {
+    return 'Hola' + nome + 'que tal?';
+}
+
 
 // dá oi para 'Daniel' de várias formas diferentes
 dizOiPara(oiEmPortuguesFormal, 'Daniel');
@@ -143,3 +151,42 @@ dizOiPara(oiEmPortugues, 'Daniel');
 dizOiPara(function(nome) {
     return 'Hi ' + nome + ', how are you?';
 }, 'Daniel');
+
+dizOiPara(oiEmMandarin, 'Francisco');
+dizOiPara(oiEmEspanhol, 'Francisco');
+dizOiPara(function(nome) {
+    return 'Greetings Mr(s).' + nome + ', how is your day?';
+}, 'Francisco');
+
+
+// =========================== Exercicio 13 ================ 
+
+function aplicaOperacaoEmCadaElemento(operacao, vetor1, vetor2) {
+
+    if(vetor1.length != vetor2.length) return null;
+
+    let vetor3 = [];
+
+    for(let i = 0; i < vetor1.length; i++) {
+        vetor3[i] = operacao(vetor1[i], vetor2[i]);
+    }
+
+    return vetor3;
+}
+
+function soma(a, b) {
+    return a + b;
+}
+
+let multiplica = function(a, b) {
+    return a*b;
+}
+
+let array1 = [4, 2, -1, 10];
+let array2 = [10, 2, 3, 5 ];
+
+escreva(13, 'Soma: ', aplicaOperacaoEmCadaElemento(soma, array1, array2));
+escreva(13, 'Multiplica: ', aplicaOperacaoEmCadaElemento(multiplica, array1, array2));
+escreva(13, 'Soma: ', aplicaOperacaoEmCadaElemento(function(a, b) {
+    return a - b;
+}, array1, array2));
