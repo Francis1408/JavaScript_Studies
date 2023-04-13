@@ -70,3 +70,4 @@ function verificaA() {
 let botaoResultadoEl =  document.querySelector('#resolver');
 
 botaoResultadoEl.addEventListener('click', verificaA);
+
