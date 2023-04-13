@@ -3,7 +3,14 @@
 
 function expandir(e) {
 
+
     let el  = e.currentTarget;
+
+    if(el.innerHTML === '+') {
+        el.innerHTML = '-';
+    }
+    else el.innerHTML = '+';
+    
     console.log(el.parentNode);
     el.parentNode.classList.toggle('expandido');
 
