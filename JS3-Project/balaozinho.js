@@ -10,6 +10,9 @@ let marcacao_yEl = document.querySelector('#marcacao-y');
 let marcacao_larguraEl = document.querySelector('#marcacao-largura');
 let marcacao_alturaEl = document.querySelector('#marcacao-altura');
 
+let seletorArquivoEl = document.querySelector('#seletor-arquivo');
+let fotoEl = document.querySelector('.foto-anotada');
+
 // Evento de marcação 
 
 for (let marcacaoEl of marcacoesEl) {
@@ -86,6 +89,26 @@ marcacao_alturaEl.addEventListener('change', (e) => {
 marcacao_larguraEl.addEventListener('change', (e) => {
 
     marcacoesEl[marcacao_selecionada].style.width = `${e.currentTarget.value}px`
+
+});
+
+// Selecionar imagem
+
+seletorArquivoEl.addEventListener('change', (e) => {
+
+    const listaArquivo = e.target;
+    const arquivo = listaArquivo.files[0];
+
+    if(arquivo) {
+        const reader = new FileReader();
+        reader.addEventListener('load', (e) =>{
+
+           img = fotoEl.childNodes[1]; //Posição da imagem
+           img.src = e.target.result;
+        })
+
+        reader.readAsDataURL(arquivo);
+    }
 
 });
 
