@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="calice.ico">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Tesouro dos Piratas</title>
+</head>
+<body>
+    <h1>Gerenciador de Tesouros</h1>
+
+    <table>
+        <caption>Estes são os tesouros acumulados do Barba-ruiva em suas aventuras</caption>
+        <thead>
+            <tr>
+                <th>Tesouro</th><th>Nome</th><th>Valor unitário</th><th>Quantidade</th><th>Valor total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="imgs/moedas.png" alt=""></td>
+                <td>Moedas de ouro</td>
+                <td><input type="number" value="10" id="moedas-valor"></td>
+                <td><input type="number" value="835" id="moedas-qtd"></td>
+                <td id="moedas-total">8.350</td>
+            </tr>
+            <tr>
+                <td><img src="imgs/coroa.png" alt=""></td>
+                <td>Coroas</td>
+                <td><input type="number" value="210" id="coroas-valor"></td>
+                <td><input type="number" value="4" id="coroas-qtd"></td>
+                <td id="coroas-total">840</td>
+            </tr>
+            <tr>
+                <td><img src="imgs/calice.png" alt=""></td>
+                <td>Cálices de ouro</td>
+                <td><input type="number" value="4500" id="calices-valor"></td>
+                <td><input type="number" value="1" id="calices-qtd"></td>
+                <td id="calices-total">4.500</td>
+            </tr>
+            <tr>
+                <td><img src="imgs/rum.png" alt=""></td>
+                <td>Barris de Rum</td>
+                <td>não tem preço</td>
+                <td><input type="number" value="7" id="rum-qtd"></td>
+                <td> - </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="4">Total</td>
+            <td id="valor-total">13.690</td>
+        </tfoot>
+    </table>
+
+    <p>Yarr Harr, marujo! Aqui é o temido Barba-Ruiva e você deve me ajudar a contabilizar os espólios das minhas aventuras!</p>
+    <script src="planilhaPirata.js"></script>
+</body>
+</html>
