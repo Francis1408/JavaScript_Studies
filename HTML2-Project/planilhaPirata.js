@@ -1,17 +1,59 @@
-// Moedas Elements
-let moedas_valorEl = document.querySelector("#moedas-valor");
-let moedas_qtdEl = document.querySelector("#moedas-qtd");
-let moedas_totalEl = document.querySelector("#moedas-total");
+// Valores element
 
-// Coroas Elements
-let coroas_valorEl = document.querySelector("#coroas-valor");
-let coroas_qtdEl = document.querySelector("#coroas-qtd");
-let coroas_totalEl = document.querySelector("#coroas-total");
+let valoresEl = document.querySelectorAll('.valor');
 
-// Calices Elements
-let calices_valorEl = document.querySelector("#calices-valor");
-let calices_qtdEl = document.querySelector("#calices-qtd");
-let calices_total = document.querySelector("#calices-total");
+// Quantidade element
 
+let quantidadeEl = document.querySelectorAll('.quantidade');
 
+// Total element
+
+let totalEl = document.querySelectorAll('.total');
+
+// Valor final element
+
+let valorTotalEl = document.querySelector('#valor-total');
+
+// Events Listeners
+
+for (let i = 0; i < valoresEl.length; i++) {
+
+    valoresEl[i].addEventListener('change', (e) => {
+
+        let triggerEl = e.currentTarget;
+        totalEl[i].innerHTML =  `${triggerEl.value * quantidadeEl[i].value}`;
+        
+        let valorTotal = 0;
+
+        for(let k = 0; k < totalEl.length; k++) {
+
+            valorTotal += parseInt(totalEl[k].innerHTML);
+            //console.log(totalEl[k].innerHTML); 
+        }
+
+        valorTotalEl.innerHTML = `${valorTotal}`;
+
+    });
+}
+
+for (let j = 0; j < quantidadeEl.length; j++) {
+
+    quantidadeEl[j].addEventListener('change', (e) =>{
+
+        let triggerEl = e.currentTarget;
+        totalEl[j].innerHTML = `${triggerEl.value * valoresEl[j].value}`;
+
+        let valorTotal = 0;
+
+        for(let k = 0; k < totalEl.length; k++) {
+
+            valorTotal += parseInt(totalEl[k].innerHTML);
+            //console.log(totalEl[k].innerHTML); 
+        }
+
+        valorTotalEl.innerHTML = `${valorTotal}`;
+        
+    });
+
+}
 
