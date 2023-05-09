@@ -1,0 +1,56 @@
+ html {
+    background-size: cover;
+    height: 100%;
+    background-image: linear-gradient(rgb(168, 238, 246), rgb(21, 235, 21));
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+h1 {
+    font-size: 50px;
+}
+p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.curiosidade {
+    background-image: url(../imgs/favo-de-mel.png);
+    border: solid 1px;
+    border-color: rgba(235, 186, 8, 0.886);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.icone-curiosidade {
+    float: left;
+    margin-right: 20px;
+}
+
+.casta-de-abelha {
+    border: solid 5px;
+    border-radius: 50%;
+    border-color: rgba(235, 186, 8, 0.886);
+
+}
+
+.voltar {
+    text-align: right;
+}
+
+#zangao {
+    float: right;
+    margin-left: 10px;
+}
+
+#operaria, #rainha {
+    float: left;
+    margin-right: 10px;
+}
+
+
