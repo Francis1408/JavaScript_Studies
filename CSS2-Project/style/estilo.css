@@ -1,0 +1,105 @@
+html {
+    background-image: linear-gradient(rgb(102, 94, 94), rgb(4, 4, 40));
+    min-height: 100%;
+    background-size: cover;
+}
+
+
+#logomarca {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+li {
+    font-size: 20px;
+    color: #f4f4f4;
+}
+
+p:not(.nota) {
+    color: #f4f4f4;
+}
+
+h1, h2 {
+    font-family: "Abyssinica SIL", serif;
+}
+
+h1 {
+    color: #222533;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+    color: #948c8c;
+}
+
+a:link {
+    color: #f4f4f4;
+}
+
+a:visited {
+    color: orange;
+}
+
+a:hover {
+    color: silver;
+}
+
+a:active {
+    color: yellow;
+}
+
+a[href^="http"] {
+    background-image: url(../img/globo.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.nota {
+    opacity: 0.5;
+    background-color: gold;
+    width: fit-content;
+}
+.nota > strong {
+    font-weight: bold;
+    color: rgb(254, 4, 4);
+
+}
+
+.nota > a:link {
+    color: black;
+}
+
+.passo > strong {
+    font-size: 24px;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #8c8c8c;
+    color: #222533;
+}
+
+.passo > em {
+    color: gold;
+
+}
+/*
+p:nth-of-type(2n) {
+    text-align: right;
+}
+
+
+p:nth-of-type(2n+1) {
+    text-align: left;
+}
+*/
