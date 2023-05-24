@@ -1,0 +1,20 @@
+{
+  "name": "geiser",
+  "version": "0.1.0",
+  "description": "um visualizador de pcs fritando",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Francis1408",
+  "license": "ISC",
+  "dependencies": {
+    "express": "latest",
+    "hbs": "^4.2.0",
+    "underscore": "^1.13.6"
+  },
+  "type": "module"
+}
